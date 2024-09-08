@@ -1,27 +1,28 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> 
 using namespace std;
 
-//bubble sort
-void bubbleSort(char** array,int x){
-	for (int i = 0; i < x - 1; ++i) {
-        for (int j = 0; j < x - i - 1; ++j) {
-            if (array[j][0] < array[j + 1][0]) {
-                char* temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-            }
-        }
-    }
+void BubbleSort(char** array, int x){
+	for(int i=0; i<x-1; ++i){//control count
+		for(int j=0; j<x-i-1; ++j){//to compare
+			if(array[j][0]<array[j+1][0]){
+				char* temp = array[j];//change point
+				array[j] = array[j+1];
+				array[j+1]=temp;
+			}
+		}
+	}
 }
-int main() {
-	int x,y;
+
+int main(){
+	int x, y;
 	cout<<"Please enter the number of strings (x) and the length (y):";
 	cin>>x>>y;
-	char** array = new char*[x];//create dynamic 2d array
-	for(int i=0;i<x;++i){
-		 array[i] = new char[y + 1];  //each string up to y letters, and put the terminator on the end
+	//use malloc
+	char** array = (char**)malloc(x*sizeof(char*));
+	for(int k=0; k<x; ++k){
+		array[k] = (char*)malloc((y+1)*sizeof(char));//each strings has y+1 space
 	}
-	//get each string
+	
 	cout<<"Please enter"<<x<<" strings, each string is " <<y<<" characters:\n";
 	cout << "the string is:\n";
     for (int i = 0; i < x; ++i) {
@@ -34,7 +35,7 @@ int main() {
         }
     }
     //call function
-    bubbleSort(array,x);
+    BubbleSort(array, x);
     //output
     cout<<"\nThe sorted string is (arranged from largest to smallest according to the first character):\n";
     for (int i = 0; i < x; ++i) {
@@ -42,10 +43,11 @@ int main() {
     }
     //release memory
     for (int i = 0; i < x; ++i) {
-        delete[] array[i];
+        free(array[i]);
     }
-    delete[] array;
+    free(array);
 
     return 0;
+	
 	
 }

@@ -2,7 +2,7 @@
 using namespace std;
 
 //bubble sort
-void bubbleSort(char** array,int x){
+void BubbleSort(char** array,int x){
 	for (int i = 0; i < x - 1; ++i) {
         for (int j = 0; j < x - i - 1; ++j) {
             if (array[j][0] < array[j + 1][0]) {
@@ -34,7 +34,7 @@ int main() {
         }
     }
     //call function
-    bubbleSort(array,x);
+    BubbleSort(array,x);
     //output
     cout<<"\nThe sorted string is (arranged from largest to smallest according to the first character):\n";
     for (int i = 0; i < x; ++i) {
