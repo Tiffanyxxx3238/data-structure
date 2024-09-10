@@ -22,14 +22,13 @@ int main() {
 		 array[i] = new char[y + 1];  //each string up to y letters, and put the terminator on the end
 	}
 	//get each string
-	cout<<"Please enter"<<x<<" strings, each string is " <<y<<" characters:\n";
-	cout << "the string is:\n";
+ 	cout << "Please enter " << x << " strings, each up to " << y << " characters:\n";
     for (int i = 0; i < x; ++i) {
-    	cout << "Enter the " <<i+1<<" ";
+    	cout << "Enter the " <<i+1<<" : ";
     	cin>>array[i];
     	//check length
     	 if (strlen(array[i]) > y) {
-            cout << "over the  " << y << " will be cut off\n";
+            cout << "String exceeds   " << y << " characters, so will be cut off\n";
             array[i][y] = '\0';  
         }
     }

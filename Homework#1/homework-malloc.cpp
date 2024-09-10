@@ -24,13 +24,12 @@ int main(){
 	}
 	
 	cout<<"Please enter"<<x<<" strings, each string is " <<y<<" characters:\n";
-	cout << "the string is:\n";
     for (int i = 0; i < x; ++i) {
-    	cout << "Enter the " <<i+1<<" ";
+    	cout << "Enter the " <<i+1<<" : ";
     	cin>>array[i];
     	//check length
     	 if (strlen(array[i]) > y) {
-            cout << "over the  " << y << " will be cut off\n";
+            cout << "String exceeds   " << y << " characters, so will be cut off\n";
             array[i][y] = '\0';  
         }
     }
