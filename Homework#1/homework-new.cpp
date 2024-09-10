@@ -3,8 +3,8 @@ using namespace std;
 
 //bubble sort
 void BubbleSort(char** array,int x){
-	for (int i = 0; i < x - 1; ++i) {
-        for (int j = 0; j < x - i - 1; ++j) {
+	for (int i = 0; i < x - 1; ++i) {//control count
+        for (int j = 0; j < x - i - 1; ++j) { // compare near by numbers
             if (array[j][0] < array[j + 1][0]) {
                 char* temp = array[j];
                 array[j] = array[j + 1];
@@ -40,7 +40,7 @@ int main() {
     for (int i = 0; i < x; ++i) {
         cout << array[i] << endl;
     }
-    //release memory
+    //release memory: new use delete
     for (int i = 0; i < x; ++i) {
         delete[] array[i];
     }

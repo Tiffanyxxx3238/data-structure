@@ -41,7 +41,7 @@ int main(){
     for (int i = 0; i < x; ++i) {
         cout << array[i] << endl;
     }
-    //release memory
+    //release memory: malloc use free
     for (int i = 0; i < x; ++i) {
         free(array[i]);
     }

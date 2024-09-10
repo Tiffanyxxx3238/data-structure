@@ -42,9 +42,9 @@ int main(){
         int current_length = first_names[j].length() + last_names[j].length() + 1;
         int padding = (total_length - current_length) / 2; 
 
-        cout << setw(padding + first_names[j].length()) << right << first_array[j]
+        cout << setw(padding + first_names[j].length()) << right << first_names[j]
                   << " "
-                  << setw(padding + last_names[j].length()) << right << last_array[j]
+                  << setw(padding + last_names[j].length()) << right << last_names[j]
                   << endl;
 	}
 	
