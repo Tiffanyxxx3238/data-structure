@@ -2,24 +2,24 @@
 using namespace std;
 
 int main(){
-	int num;
+	int x;
 	cout<<"Please enter the number of names: ";
-	cin>>num;//input how many names
+	cin>>x;//input how many names
 	cin.ignore();//skip \n
 	//four array use new
-	string* full_names =  new string[num];
-	string* first_names =  new string[num];
-	string* second_names =  new string[num];
-	string* rest_names =  new string[num];
+	string* full_names =  new string[x];
+	string* first_names =  new string[x];
+	string* second_names =  new string[x];
+	string* rest_names =  new string[x];
 	//count the most long firstname
 	size_t max_first_length = 0;
 	
-	cout<<"Please enter "<<num<<" names: "<<endl;
+	cout<<"Please enter "<<x<<" names: "<<endl;
 	//read every line name
-	for(int i=0; i<num; ++i){
+	for(int i=0; i<x; ++i){
 		getline(cin, full_names[i]);
 		//use stringstream take name apart
-		stringstream ss(full_names[i]);
+		stringstream ss(full_names[i]);//read name in full_name array, and output to stringsstream ss's object 
 		string first_name, second_name, rest_name;
 		ss>>first_name>>second_name; //read first and second name
 		getline(ss, rest_name);// if have remain, then read the remain one
@@ -34,10 +34,10 @@ int main(){
 	}
 	//print
 	cout<<"\nName List:\n";
-	for(int j=0; j<num; ++j){
-		cout<<setw(max_first_length)<<right<<first_names[j]<<" "<<left<<second_names[j]<<rest_names[j]<<endl;
+	for(int j=0; j<x; ++j){//setw is define the wight
+		cout<<setw(max_first_length)<<right<<first_names[j]<<" "<<left<<second_names[j]<<rest_names[j]<<endl;//use setw, right, left to Alignment and width 
 	}
-	//release memory
+	//release memory,use new way
 	delete[] full_names;
     delete[] first_names;
     delete[] second_names;

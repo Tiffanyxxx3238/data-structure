@@ -2,8 +2,8 @@
 using namespace std;
 
 void BubbleSort(char** array, int x){
-	for(int i=0; i<x-1; ++i){//control count
-		for(int j=0; j<x-i-1; ++j){//to compare
+	for(int i=0; i<x-1; ++i){//control count,remove the most big charaters 
+		for(int j=0; j<x-i-1; ++j){//to compare near by string
 			if(array[j][0]<array[j+1][0]){
 				char* temp = array[j];//change point
 				array[j] = array[j+1];
